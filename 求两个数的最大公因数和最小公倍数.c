@@ -1,15 +1,15 @@
-//ÇóÁ½¸öÊıµÄ×îĞ¡¹«±¶Êı-Õ·×ªÏà³ı·¨
+ï»¿//æ±‚ä¸¤ä¸ªæ•°çš„æœ€å°å…¬å€æ•°-è¾—è½¬ç›¸é™¤æ³•
 #include <stdio.h>
 #include <stdlib.h>
 int main (void)
 {
 	long int max,min,a,b,c;
-	printf ("ÇëÊäÈëÊı×ÖA:");
+	printf ("è¯·è¾“å…¥æ•°å­—A:");
 	scanf ("%ld",&a);
-	printf ("ÇëÊäÈëÊı×ÖB:");
+	printf ("è¯·è¾“å…¥æ•°å­—B:");
 	scanf ("%ld",&b);
 	
-	if (a>b)  //±È½ÏAºÍBµÄ´óĞ¡
+	if (a>b)  //æ¯”è¾ƒAå’ŒBçš„å¤§å°
 	{
 		max=a;
 		min=b;
@@ -21,14 +21,14 @@ int main (void)
 	}
 
 	c=max%min;
-	while (c!=0)  //Õ·×ªÏà³ı·¨
+	while (c!=0)  //è¾—è½¬ç›¸é™¤æ³•
 	{
 		max=min;
 		min=c;
 		c=max%min;
 	}
-	printf ("Á½ÊıµÄ×î´ó¹«ÒòÊı:%ld\n",min);
-	printf ("Á½ÊıµÄ×îĞ¡¹«±¶Êı:%ld\n",a*b/min);
+	printf ("ä¸¤æ•°çš„æœ€å¤§å…¬å› æ•°:%ld\n",min);
+	printf ("ä¸¤æ•°çš„æœ€å°å…¬å€æ•°:%ld\n",a*b/min);
 	system ("pause");
 	return 0;
 }

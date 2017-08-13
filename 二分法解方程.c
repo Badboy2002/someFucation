@@ -1,48 +1,48 @@
-//Ãû´ÊĞ¡Ğ´±ê¼Ç Çø¼ä:section ¾«¶Èprecision  Ãİº¯Êıpower function ·½³Ì equation 
+ï»¿//åè¯å°å†™æ ‡è®° åŒºé—´:section ç²¾åº¦precision  å¹‚å‡½æ•°power function æ–¹ç¨‹ equation 
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
 #include <stdlib.h> 
-double count (char st[][10],double x); // ÓÃÍ¾£º¼ÆËãÃİ ²ÎÊı:st[]ÎªÒÑ²ğ·ÖºÃµÄ×Ö·û´®Êı×é ĞÎÈç2^x, xÎªÃİÖĞµÄÖµ ·µ»ØÖµ:±í´ïÊ½µÄÖµ 
+double count (char st[][10],double x); // ç”¨é€”ï¼šè®¡ç®—å¹‚ å‚æ•°:st[]ä¸ºå·²æ‹†åˆ†å¥½çš„å­—ç¬¦ä¸²æ•°ç»„ å½¢å¦‚2^x, xä¸ºå¹‚ä¸­çš„å€¼ è¿”å›å€¼:è¡¨è¾¾å¼çš„å€¼ 
 int main (void)
 {
-	int mark=0,i=0,j=0,k=1,n;  //Êı×éÏÂ±ê mark:¶ÁÈ¡·½³Ì i: part[i][]1Î¬±í´ïÊ½±ê¼Ç-iºÅ±í´ïÊ½  j:part[i][j]2Î¬×Ö·û±ê¼Ç-iºÅ±í´ïÊ½ÖĞµÚj¸ö×Ö·û  k:·ûºÅ±ê¼ÇÏÂ±ê  n:×Ü¼Ó¼õÊ±µÄÏÂ±ê 
- 	int symbol[10]={0}; //0ÎªÕı 1Îª¸º ×÷Îª·´ºÅ±êÊ¶   
-	int difference; //differenceÎªµØÖ·²îÖµ ÓÃÓÚ´¦Àí×Ö·û´® 
-	char equation[100]; //½ÓÊÜÓÃ»§ÊäÈë
-	char part[10][10],temp[10];  //part:²ğ·ÖºóµÄ±í´ïÊ½  temp×Ö·û´®×ªÊıÖµÖĞ×ªÖµ 
-	char * adr,* ptp; //µØÖ·´¦Àí 
-	double vaule[10]={0,0},result1=0,result2=0;   //´æ´¢½á¹û
+	int mark=0,i=0,j=0,k=1,n;  //æ•°ç»„ä¸‹æ ‡ mark:è¯»å–æ–¹ç¨‹ i: part[i][]1ç»´è¡¨è¾¾å¼æ ‡è®°-iå·è¡¨è¾¾å¼  j:part[i][j]2ç»´å­—ç¬¦æ ‡è®°-iå·è¡¨è¾¾å¼ä¸­ç¬¬jä¸ªå­—ç¬¦  k:ç¬¦å·æ ‡è®°ä¸‹æ ‡  n:æ€»åŠ å‡æ—¶çš„ä¸‹æ ‡ 
+ 	int symbol[10]={0}; //0ä¸ºæ­£ 1ä¸ºè´Ÿ ä½œä¸ºåå·æ ‡è¯†   
+	int difference; //differenceä¸ºåœ°å€å·®å€¼ ç”¨äºå¤„ç†å­—ç¬¦ä¸² 
+	char equation[100]; //æ¥å—ç”¨æˆ·è¾“å…¥
+	char part[10][10],temp[10];  //part:æ‹†åˆ†åçš„è¡¨è¾¾å¼  tempå­—ç¬¦ä¸²è½¬æ•°å€¼ä¸­è½¬å€¼ 
+	char * adr,* ptp; //åœ°å€å¤„ç† 
+	double vaule[10]={0,0},result1=0,result2=0;   //å­˜å‚¨ç»“æœ
 	double sectionA,sectionB,sectionC,precision; 
 	
-   //²âÊÔ½×¶Î¶¨Òå 
+   //æµ‹è¯•é˜¶æ®µå®šä¹‰ 
 	sectionA=-100;
 	sectionB=100;
 	precision=0.01;
 	
-	printf ("ÇëÊäÈë·½³Ì:");
+	printf ("è¯·è¾“å…¥æ–¹ç¨‹:");
 	scanf ("%s",&equation);
 	fflush (stdin);
-	printf ("ÇëÊäÈëÇø¼äA:");
+	printf ("è¯·è¾“å…¥åŒºé—´A:");
 	scanf ("%lf",&sectionA);
 	fflush (stdin);
-	printf ("ÇëÊäÈëÇø¼äB:");
+	printf ("è¯·è¾“å…¥åŒºé—´B:");
 	scanf ("%lf",&sectionB);
 	fflush (stdin);
-	printf ("ÇëÊäÈë¾«¶È:");
+	printf ("è¯·è¾“å…¥ç²¾åº¦:");
  	scanf ("%lf",&precision);
 		
-	//¶Ô×Ö·û´®½øĞĞ²ğ·Ö,ÒÔ+,-Îª·Ö¸ô·û 
+	//å¯¹å­—ç¬¦ä¸²è¿›è¡Œæ‹†åˆ†,ä»¥+,-ä¸ºåˆ†éš”ç¬¦ 
 	while (equation[mark]!='=')
 	{
-		if (equation[mark]!='-'&&equation[mark]!='+') //Èç¹û×Ö·û²»Îª+ÇÒ²»Îª- ¾Í½«Ëü´æÈëpart±í´ïÊ½ÖĞ  ¶şÎ¬×Ö·û±ê¼ÇºóÒÆÒÔ±ã¶ÁÈ¡ÏÂÒ»¸ö×Ö·û 
+		if (equation[mark]!='-'&&equation[mark]!='+') //å¦‚æœå­—ç¬¦ä¸ä¸º+ä¸”ä¸ä¸º- å°±å°†å®ƒå­˜å…¥partè¡¨è¾¾å¼ä¸­  äºŒç»´å­—ç¬¦æ ‡è®°åç§»ä»¥ä¾¿è¯»å–ä¸‹ä¸€ä¸ªå­—ç¬¦ 
 			{
 				part[i][j]=equation[mark];
 				j++;
 			}
 		else if (equation[mark]=='-')
 		{
-			part[i][j]='\0';  //Èç¹ûÊÇ,¼ÇÏÂ·ûºÅ Ò»Î¬±í´ïÊ½±ê¼ÇºóÒÆ ¶şÎ¬×Ö·û±ê¼ÇÖØÖÃ ·ûºÅ±ê¼ÇºóÒÆ 
+			part[i][j]='\0';  //å¦‚æœæ˜¯,è®°ä¸‹ç¬¦å· ä¸€ç»´è¡¨è¾¾å¼æ ‡è®°åç§» äºŒç»´å­—ç¬¦æ ‡è®°é‡ç½® ç¬¦å·æ ‡è®°åç§» 
 		 	symbol[k]=1;
 			k++;
 			i++;
@@ -50,18 +50,18 @@ int main (void)
 		}
 		else if (equation[mark]=='+')
 		{
-			part[i][j]='\0';  //Èç¹ûÊÇ,¼ÇÏÂ·ûºÅ Ò»Î¬±í´ïÊ½±ê¼ÇºóÒÆ ¶şÎ¬×Ö·û±ê¼ÇÖØÖÃ ·ûºÅ±ê¼ÇºóÒÆ 
+			part[i][j]='\0';  //å¦‚æœæ˜¯,è®°ä¸‹ç¬¦å· ä¸€ç»´è¡¨è¾¾å¼æ ‡è®°åç§» äºŒç»´å­—ç¬¦æ ‡è®°é‡ç½® ç¬¦å·æ ‡è®°åç§» 
 		 	symbol[k]=0;
 			k++;
 			i++;
 			j=0;
 		}
 		
-		mark++;  //×Ö·û´®±ê¼ÇºóÒÆ 
+		mark++;  //å­—ç¬¦ä¸²æ ‡è®°åç§» 
 	}
 	part[i][j]='\0';
-	printf ("×Ö·û´®²ğ·Ö½áÊø\n");
-	printf ("·½³Ì±»Ê¶±ğÎª:");
+	printf ("å­—ç¬¦ä¸²æ‹†åˆ†ç»“æŸ\n");
+	printf ("æ–¹ç¨‹è¢«è¯†åˆ«ä¸º:");
 	for (n=0;n<=i;n++)
 	{
 		if (symbol[n]==0)
@@ -81,18 +81,18 @@ int main (void)
 	result2=0;
 	sectionC=(sectionA+sectionB)/2;
 	
-	for (n=0;n<=i;n++) //¼ÆËãÈ¡ÖµÎªAÊ± ·½³ÌµÄÖµ 
+	for (n=0;n<=i;n++) //è®¡ç®—å–å€¼ä¸ºAæ—¶ æ–¹ç¨‹çš„å€¼ 
 	{
-		if ( strrchr (part[n],'^') ) //Ãİ±ê¼Ç¼ì²â£¬(Èç¹ûÓĞ^)£¬´«Èëcount ()º¯Êı 
+		if ( strrchr (part[n],'^') ) //å¹‚æ ‡è®°æ£€æµ‹ï¼Œ(å¦‚æœæœ‰^)ï¼Œä¼ å…¥count ()å‡½æ•° 
 			{
 				vaule[n]=count (part[n],sectionA);
-				if (symbol[n]==1)  //·´ºÅ 
+				if (symbol[n]==1)  //åå· 
 					vaule[n]=-vaule[n];
 				result1=result1+vaule[n];
 				continue;
 			}
 			
-		else if  (strrchr (part[n],'x')==NULL) //³£ÊıÏî¼ì²â (Ã»ÓĞx¼´Îª³£ÊıÏî),Ö±½Ó¸³Öµ 
+		else if  (strrchr (part[n],'x')==NULL) //å¸¸æ•°é¡¹æ£€æµ‹ (æ²¡æœ‰xå³ä¸ºå¸¸æ•°é¡¹),ç›´æ¥èµ‹å€¼ 
 			{
 				vaule[n]=atof (part[n]);
 				if (symbol[n]==1)
@@ -100,31 +100,31 @@ int main (void)
 				result1=result1+vaule[n];
 				continue;
 			}
-		else if (strrchr (part[n],'x') &&strrchr (part[n],'^')==NULL) //ÏµÊıÏî¼ì²â (ÓĞxÇÒÃ»ÓĞ^) ¼ÇÏÂÏµÊı ³ËÒÔsection 
+		else if (strrchr (part[n],'x') &&strrchr (part[n],'^')==NULL) //ç³»æ•°é¡¹æ£€æµ‹ (æœ‰xä¸”æ²¡æœ‰^) è®°ä¸‹ç³»æ•° ä¹˜ä»¥section 
 		{
-			adr=strrchr (part[n],'x'); //¼ÇÏÂxÎ»ÖÃ
-			ptp=part[n];  //¼ÇÏÂÆğÊ¼µØÖ·
-			strncpy (temp,part[n],adr-ptp);  //½ØÈ¡×Ö·û´® 
+			adr=strrchr (part[n],'x'); //è®°ä¸‹xä½ç½®
+			ptp=part[n];  //è®°ä¸‹èµ·å§‹åœ°å€
+			strncpy (temp,part[n],adr-ptp);  //æˆªå–å­—ç¬¦ä¸² 
 			vaule[n]=atof (temp);
 				if (symbol[n]==1)
 					vaule[n]=-vaule[n];
-			vaule[n]=vaule[n]*sectionA; //¼ÆËã 
+			vaule[n]=vaule[n]*sectionA; //è®¡ç®— 
 			result1=result1+vaule[n];
 		}
 	}
 	printf ("result1=%lf\n",result1);
-	for (n=0;n<=i;n++) //¼ÆËãÈ¡ÖµÎªCÊ± ·½³ÌµÄÖµ 
+	for (n=0;n<=i;n++) //è®¡ç®—å–å€¼ä¸ºCæ—¶ æ–¹ç¨‹çš„å€¼ 
 	{
-		if ( strrchr (part[n],'^') ) //Ãİ±ê¼Ç¼ì²â£¬(Èç¹ûÓĞ^)£¬´«Èëcount ()º¯Êı 
+		if ( strrchr (part[n],'^') ) //å¹‚æ ‡è®°æ£€æµ‹ï¼Œ(å¦‚æœæœ‰^)ï¼Œä¼ å…¥count ()å‡½æ•° 
 			{
 				vaule[n]=count (part[n],sectionC);
-				if (symbol[n]==1)  //·´ºÅ 
+				if (symbol[n]==1)  //åå· 
 					vaule[n]=-vaule[n];
 				result2=result2+vaule[n];
 				continue;
 			}
 			
-		else if  (strrchr (part[n],'x')==NULL) //³£ÊıÏî¼ì²â (Ã»ÓĞx¼´Îª³£ÊıÏî),Ö±½Ó¸³Öµ 
+		else if  (strrchr (part[n],'x')==NULL) //å¸¸æ•°é¡¹æ£€æµ‹ (æ²¡æœ‰xå³ä¸ºå¸¸æ•°é¡¹),ç›´æ¥èµ‹å€¼ 
 			{
 				vaule[n]=atof (part[n]);
 				if (symbol[n]==1)
@@ -132,15 +132,15 @@ int main (void)
 				result2=result2+vaule[n];
 				continue;
 			}
-		else if (strrchr (part[n],'x') &&strrchr (part[n],'^')==NULL) //ÏµÊıÏî¼ì²â (ÓĞxÇÒÃ»ÓĞ^) ¼ÇÏÂÏµÊı ³ËÒÔsection 
+		else if (strrchr (part[n],'x') &&strrchr (part[n],'^')==NULL) //ç³»æ•°é¡¹æ£€æµ‹ (æœ‰xä¸”æ²¡æœ‰^) è®°ä¸‹ç³»æ•° ä¹˜ä»¥section 
 		{
-			adr=strrchr (part[n],'x'); //¼ÇÏÂxÎ»ÖÃ
-			ptp=part[n];  //¼ÇÏÂÆğÊ¼µØÖ·
-			strncpy (temp,part[n],adr-ptp);  //½ØÈ¡×Ö·û´® 
+			adr=strrchr (part[n],'x'); //è®°ä¸‹xä½ç½®
+			ptp=part[n];  //è®°ä¸‹èµ·å§‹åœ°å€
+			strncpy (temp,part[n],adr-ptp);  //æˆªå–å­—ç¬¦ä¸² 
 			vaule[n]=atof (temp);
 				if (symbol[n]==1)
 					vaule[n]=-vaule[n];
-			vaule[n]=vaule[n]*sectionC; //¼ÆËã 
+			vaule[n]=vaule[n]*sectionC; //è®¡ç®— 
 			result2=result2+vaule[n];
 		}
 	}//for end
@@ -168,7 +168,7 @@ int main (void)
 	}//while end
 	printf ("result1=%lf\n",result1);
 	printf ("result2=%lf\n",result2);
-	printf ("·½³ÌµÄ½âÎª:%lf\n",sectionC);
+	printf ("æ–¹ç¨‹çš„è§£ä¸º:%lf\n",sectionC);
 	return 0;	
 }
 

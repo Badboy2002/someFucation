@@ -1,4 +1,4 @@
-//ËØÊı¼ì²â if it is prime 
+ï»¿//ç´ æ•°æ£€æµ‹ if it is prime 
 #include <stdio.h> 
 unsigned long int isprime (unsigned long int number);
 int main (void)

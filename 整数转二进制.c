@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 int int_to_binary (int number);
 int main (void)
 {
@@ -7,7 +7,7 @@ int main (void)
 	while (scanf ("%d",&num)==1)
 	{
 		int_to_binary (num);
-		printf ("ÇëÊäÈëÒ»¸öÕûÊý:");
+		printf ("è¯·è¾“å…¥ä¸€ä¸ªæ•´æ•°:");
 	}
 	printf ("Bye.\n");
 	return 0;
@@ -16,7 +16,7 @@ int main (void)
 int int_to_binary (int number)
 {
 	int bin[100],mark=0;
-	printf ("µ÷ÓÃº¯ÊýÖÐ......\n");
+	printf ("è°ƒç”¨å‡½æ•°ä¸­......\n");
 	while (number>0)
 	{
 		printf ("number=%d mark=%d di=%d\n",number,mark,number%2);
@@ -25,7 +25,7 @@ int int_to_binary (int number)
 		mark++;
 	}
 	mark--;
-	printf ("´òÓ¡½á¹û\n¶þ½øÖÆ:");
+	printf ("æ‰“å°ç»“æžœ\näºŒè¿›åˆ¶:");
 	while (mark>=0)
 	{
 		printf ("%d",bin[mark]);

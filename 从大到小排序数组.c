@@ -1,4 +1,4 @@
-#include <stdio.h>
+ï»¿#include <stdio.h>
 int main (void)
 {
 	int nums[]={439,455,25,15,701,287,369,741,651,473,119,525,112,682,622,310,538,242,42,402};
@@ -6,7 +6,7 @@ int main (void)
 	len=sizeof (nums)/4;
 		while (n<len)
         {
-            for (m=n+1,min=nums[n],mark=n;m<len;m++) //ÅÅÐò
+            for (m=n+1,min=nums[n],mark=n;m<len;m++) //æŽ’åº
             {
                 if (min<=nums[m])
                 {
